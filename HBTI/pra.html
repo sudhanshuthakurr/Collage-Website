@@ -1,0 +1,42 @@
+<html>
+ <head>
+        <meta charset="utf-8" />
+        <title>Create your own slideshow </title>       
+        <script type="text/javascript">
+
+            <!-- Comment: Image dimension: width:500px, height: 500px -->
+            var image1=new Image()               
+            image1.src="ab.jpg"                 
+
+            var image2=new Image()
+            image2.src="bc.jpg"           
+
+            var image3=new Image()
+            image3.src="ca.jpg"           
+
+         </script>
+       <style>
+            body{background-color: blue; margin: 0 auto;  text-align: center}
+        </style>
+    </head>
+
+<body>
+      
+<img src="ab.jpg"  name="slideshow" alt="imageslideshow">
+
+    <script type="text/javascript"> 
+    var numberImage=1
+    function myslide(){
+    document.images.slideshow.src=eval("image"+numberImage+".src")
+    if(numberImage<3) 
+    numberImage = numberImage + 1
+    else
+    numberImage=1
+    setTimeout("myslide()",4500)
+    }
+    myslide()
+
+    </script>
+
+ </body>
+</html>

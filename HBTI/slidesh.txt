@@ -1,0 +1,29 @@
+<script type="text/javascript">
+var image1 = new Image()
+image1.src="ab.jpg"
+
+var image2 = new Image()
+image2.src="bc.jpg"
+
+var image3 = new Image()
+image3.src="ca.jpg"
+</script>
+
+
+
+
+
+
+<img src="ab.jpg" name="slideshow" alt="imageslideshow">
+<script type="text/javascript">
+var numberImage = 1
+function myslide(){
+document.images.slideshow.src=eval("image"+numberimage+".src")
+if(numberImage < 3)
+numberImage = numberImage + 1
+else
+numberImage = 1
+setTimeout("myslide()",500)
+}
+myslide()
+</script>
